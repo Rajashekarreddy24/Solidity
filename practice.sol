@@ -671,14 +671,200 @@ contract sum
 //     }
 // }
 
+// pragma solidity ^0.8.0;
+
+// contract sumtest
+// {
+   
+//     function Sum( uint x, uint y) public pure returns(uint)
+//     {
+//         uint sum = x+y;
+//         return sum;
+//     }
+// }
+
+// pragma solidity ^ 0.8.0;
+// contract test{
+//     uint a;
+//     uint b;
+//     uint data;
+//     function updateData(uint a, uint B) public /*view returns(uint)*/
+//     {
+//         // return data;
+//     }
+//     // // function getData() public view returns(uint ) {
+//     // //     return updateData;
+//     // }
+//     function getresult() public view returns (uint)
+//     {
+//         uint updateData = a+b;
+//         return updateData;
+//     }
+// }
+
+// pragma solidity ^0.8.0;
+
+// contract test
+// {
+    
+//     // function set_values(uint a, uint b) public view returns(uint,uint )
+//     // {
+//     //     return (a,b);
+//     // }
+//     function sum(uint a, uint b) public pure returns(uint)
+//     {
+        
+//         uint Sum = a+b;
+//         return Sum;
+//     }
+// }
+
+// pragma solidity ^0.8.0;
+// contract test
+// {
+//     uint[] data =[10,20,30,40];
+//     function push_data() public  returns (uint[] memory)
+//     {
+//         data.push(50);
+//         data.push(60);
+//         data.push(60);
+//         return data;
+//     }
+// }
+
+// // Solidity program to demonstrate
+// // Push operation
+// pragma solidity ^0.8.0;
+
+// // Creating a contract
+// contract Types {
+
+// 	// Defining the array
+// 	uint[] data = [10, 20, 30, 40, 50];
+	
+// 	// Defining the function to push
+// 	// values to the array
+// 	function array_push(
+// 	) public returns(uint[] memory){
+	
+// 		data.push(60);
+// 		data.push(70);
+// 		data.push(80);
+	
+// 		return data;
+// 	}
+// }
+// pragma solidity ^0.8.0;
+// contract test{
+//     uint  a ;
+//     uint  b;
+//     uint  sum;
+//     uint multiply;
+//     uint division;
+//     string x;
+//     constructor ()  {
+//         a=10;
+//         b= 5;
+//         sum = a+b;
+//         multiply = a*b;
+//         division = a/b;
+//         x="Done";
+
+//     }
+    
+//     function B_Sum()public view returns(uint) { return sum;}
+//     function C_Multiply() public view returns(uint ){ return multiply;}
+//     function D_Division() public view returns (uint ){return division;}
+//     function AllValues() public view returns(uint,uint){ return (a,b);}
+//     function End() public view returns(string memory) { return x;}
+
+// }
+
+// pragma solidity ^0.8.0;
+// contract Practice
+// {
+//     address  owner;
+//     mapping (address => uint ) balance;
+//     constructor() {
+//         owner = msg.sender;
+        
+//     }
+//     function addBalance(uint _Add) public  returns(uint)
+//     {
+//         require(msg.sender == owner);
+//         balance [msg.sender] += _Add;
+//         return balance[msg.sender];
+//     }
+//     function getBalance() public view returns(uint)
+//     {
+//         return balance[msg.sender];
+//     }
+//     function transfer(address recipient, uint amount) public 
+//     {
+//         require (balance[msg.sender]>= amount,"Insufficient Funds");
+//         require(msg.sender != recipient, "Please enter a valid address");
+//         _transfer (msg.sender , recipient, amount);
+//     }
+//     function _transfer (address from, address to, uint amount) private
+//     {
+//         balance [from] -= amount;
+//         balance [to] += amount;
+//     }
+
+// }
+
+// pragma solidity ^0.8.0;
+// contract test{
+//     // uint a =10;
+//     // uint b =20;
+//     function Sum(uint a, uint b) public view returns(uint)
+//     {
+//         uint sum = a+b;
+//         return sum;
+//     }
+// }
+
 pragma solidity ^0.8.0;
 
-contract sumtest
+contract Calc
 {
-   
-    function Sum( uint x, uint y) public pure returns(uint)
+    
+    address owner;
+    mapping(address => uint) value;
+    address owner2;
+    mapping(address => uint)value2;
+    constructor()
     {
-        uint sum = x+y;
-        return sum;
+        owner =msg.sender;
+        owner2=msg.sender;
+    }
+    function Values(uint a,uint b) public returns(uint, uint)
+    {
+        require (msg.sender==owner);
+        require (msg.sender==owner2);
+        value[msg.sender] =a;
+        value2[msg.sender]=b;
+        return (value[msg.sender],value2[msg.sender]);
+    }
+    function getValue() public view returns(uint, uint)
+    {
+        return (value[msg.sender],value2[msg.sender]);
+    }
+    function Sum() public view returns(uint)
+    {
+        return value[msg.sender]+value2[msg.sender];
+    }
+    function Multiply() public view returns(uint)
+    {
+        return value[msg.sender]*value2[msg.sender];
+    }
+    function average() public view returns(uint)
+    {
+        return(value[msg.sender]+value2[msg.sender])/2;
+    }
+    function division() public view returns(uint)
+    {
+        return (value[msg.sender]/value2[msg.sender]);
     }
 }
+ 
