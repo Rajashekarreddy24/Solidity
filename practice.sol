@@ -614,13 +614,71 @@ contract sum
 //     }
 // }
 
+// pragma solidity ^0.8.0;
+// contract Test
+// {
+//     function Ternary(int score) public pure returns(string memory)
+//     {
+//         string memory output;
+//         output = (score>= 100? "Century":"half_century");
+//         return output;
+//     }
+// }
+
+
+
+// pragma solidity ^0.8.0;
+// contract P2V
+// {
+//     function reward() public pure returns(uint )
+//     {
+//         if (contacts )
+
+//     }
+    
+// }
+
+// pragma solidity ^0.8.0;
+
+// contract SolidityTest {
+//    uint storedData; 
+//    constructor() public{
+//       storedData = 10;   
+//    }
+
+//    function getResult() public view returns(string memory){
+//       uint a = 10; 
+//       uint b = 2;
+//       uint result = a + b;
+//       return integerToString(result); 
+//    }
+// }
+
+// pragma solidity ^0.8.0;
+// contract Test{
+//     function loops() public view returns ()
+//     {
+        
+//     }
+// }
+
+// pragma solidity ^0.8.0;
+
+// contract practice{
+//     string x = "Hello world";
+//     function Press_here() public view returns(string memory){
+//         return x;
+//     }
+// }
+
 pragma solidity ^0.8.0;
-contract Test
+
+contract sumtest
 {
-    function Ternary(int score) public pure returns(string memory)
+   
+    function Sum( uint x, uint y) public pure returns(uint)
     {
-        string memory output;
-        output = (score>= 100? "Century":"half_century");
-        return output;
+        uint sum = x+y;
+        return sum;
     }
 }
